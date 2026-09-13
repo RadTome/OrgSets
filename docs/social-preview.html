@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280, height=640, initial-scale=1.0">
+  <title>OrgSets Social Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800;900&family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 1280px;
+      height: 640px;
+      overflow: hidden;
+      background-color: #000000;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .preview-canvas {
+      width: 1280px;
+      height: 640px;
+      background: #FFFFFF;
+      border: 12px solid #000000;
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      padding: 32px 36px;
+      gap: 28px;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    /* Bauhaus background accent geometric shapes */
+    .bg-shape-1 {
+      position: absolute;
+      top: -24px;
+      right: -24px;
+      width: 130px;
+      height: 130px;
+      background: #FFD600;
+      z-index: 1;
+      border-left: 6px solid #000;
+      border-bottom: 6px solid #000;
+    }
+
+    .bg-shape-2 {
+      position: absolute;
+      bottom: -30px;
+      left: 45%;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #0044FF;
+      opacity: 0.12;
+      z-index: 1;
+    }
+
+    .bg-grid {
+      position: absolute;
+      inset: 0;
+      background-size: 28px 28px;
+      background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .left-col {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .brand-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      background: #000000;
+      border: 3px solid #000000;
+      box-shadow: 3px 3px 0px #0044FF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.6rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: #000000;
+    }
+
+    .brand-badge {
+      background: #FFD600;
+      border: 2px solid #000000;
+      padding: 3px 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #000000;
+      box-shadow: 2px 2px 0px #000000;
+      margin-left: 6px;
+    }
+
+    .headline-wrap {
+      margin: 14px 0;
+    }
+
+    .eyebrow-tag {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #0044FF;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+
+    .main-headline {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.35rem;
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: #000000;
+      text-transform: uppercase;
+    }
+
+    .main-headline span.blue {
+      color: #0044FF;
+      background: rgba(0, 68, 255, 0.08);
+      padding: 0 4px;
+      border-bottom: 4px solid #0044FF;
+    }
+
+    .sub-copy {
+      font-size: 0.95rem;
+      color: #444444;
+      line-height: 1.4;
+      margin-top: 10px;
+      font-weight: 600;
+      max-width: 560px;
+    }
+
+    .feature-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      background: #FFFFFF;
+      border: 2px solid #000000;
+      padding: 5px 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 800;
+      box-shadow: 2px 2px 0px #000000;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .pill.pill-blue { background: #0044FF; color: #FFF; }
+    .pill.pill-yellow { background: #FFD600; color: #000; }
+
+    .bottom-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px dashed #000000;
+      padding-top: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .right-col {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .preview-card {
+      background: #000000;
+      color: #FFFFFF;
+      border: 3px solid #000000;
+      box-shadow: 6px 6px 0px #FFD600;
+      padding: 18px 20px;
+      position: relative;
+    }
+
+    .preview-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #333333;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .preview-tree {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .tree-node {
+      background: #14151A;
+      border: 2px solid #333333;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .tree-node.node-apex {
+      border-color: #0044FF;
+      background: #101526;
+    }
+
+    .tree-node-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+
+    .tree-node-desc {
+      font-size: 0.75rem;
+      color: #AAA;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .badge-root {
+      background: #0044FF;
+      color: #FFF;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 2px 6px;
+    }
+
+    .badge-district {
+      background: #FFD600;
+      color: #000;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 2px 6px;
+    }
+
+    .badge-local {
+      background: #FF2222;
+      color: #FFF;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 2px 6px;
+    }
+
+    .card-footer-stats {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px dashed #333333;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+    }
+
+    .stat-val {
+      font-weight: 800;
+      color: #FFD600;
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-canvas">
+    <div class="bg-grid"></div>
+    <div class="bg-shape-1"></div>
+    <div class="bg-shape-2"></div>
+
+    <!-- Left Column: Branding, Value Prop & Pitch -->
+    <div class="left-col">
+      <div>
+        <div class="brand-header">
+          <div class="brand-logo">
+            <svg width="34" height="34" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100" height="100" fill="#000000"/>
+              <path d="M 20 20 L 80 20 L 80 40 L 40 40 L 40 80 L 20 80 Z" fill="#FFFFFF"/>
+              <rect x="50" y="50" width="30" height="30" fill="#0044FF"/>
+              <rect x="30" y="60" width="30" height="10" fill="#FFD600"/>
+              <rect x="60" y="10" width="20" height="20" fill="#FF2222"/>
+            </svg>
+          </div>
+          <h1 class="brand-title">ORGSETS</h1>
+          <span class="brand-badge">FREE FOREVER TIER</span>
+        </div>
+
+        <div class="headline-wrap">
+          <div class="eyebrow-tag">■ ALL-IN-ONE HIERARCHICAL COMMUNITY OS</div>
+          <div class="main-headline">
+            STOP CAT HERDING.<br>
+            COMMAND YOUR <span class="blue">COMMUNITY.</span>
+          </div>
+          <p class="sub-copy">
+            Eliminate spreadsheet chaos for youth sports leagues, scout troops, and chapter networks with automated Stripe dues splits, pulse SMS alerts, and digital vaults.
+          </p>
+        </div>
+
+        <div class="feature-pills">
+          <span class="pill pill-yellow">💳 STRIPE DUES SPLITS</span>
+          <span class="pill pill-blue">⚡ PULSE EMERGENCY SMS</span>
+          <span class="pill">🔒 DIGITAL COMPLIANCE VAULT</span>
+          <span class="pill">🌲 3-TIER HIERARCHY</span>
+        </div>
+      </div>
+
+      <div class="bottom-bar">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="color: #0044FF;">●</span>
+          <span>CLAIM FREE WORKSPACE: <strong>ORGSETS.COM/PLANS</strong></span>
+        </div>
+        <div style="color: #666;">
+          GITHUB.COM/RADTOME/ORGSETS
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive Brutalist Hierarchy Diagram -->
+    <div class="right-col">
+      <div class="preview-card">
+        <div class="preview-card-header">
+          <div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #888; text-transform: uppercase;">
+              HIERARCHICAL GOVERNANCE TREE
+            </div>
+            <strong style="font-family: 'Space Grotesk', sans-serif; font-size: 1.15rem; color: #FFF;">
+              LIVE ARCHITECTURE PREVIEW
+            </strong>
+          </div>
+          <span style="background: #27C93F; color: #000; font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: 0.68rem; padding: 2px 6px;">
+            100% ONLINE
+          </span>
+        </div>
+
+        <div class="preview-tree">
+          <!-- Tier 1 -->
+          <div class="tree-node node-apex">
+            <div>
+              <div class="tree-node-title">1. National Apex Council</div>
+              <div class="tree-node-desc">Master Bylaws &amp; 10% Dues Split</div>
+            </div>
+            <span class="badge-root">ROOT</span>
+          </div>
+
+          <!-- Tier 2 -->
+          <div class="tree-node" style="margin-left: 20px; border-left: 4px solid #FFD600;">
+            <div>
+              <div class="tree-node-title">2. Tri-State District League</div>
+              <div class="tree-node-desc">Tournament Schedules &amp; 25% Split</div>
+            </div>
+            <span class="badge-district">DISTRICT</span>
+          </div>
+
+          <!-- Tier 3 -->
+          <div class="tree-node" style="margin-left: 40px; border-left: 4px solid #FF2222;">
+            <div>
+              <div class="tree-node-title">3. Metro Chapter / Local Troop</div>
+              <div class="tree-node-desc">Rosters, Parent Waivers &amp; Net Dues</div>
+            </div>
+            <span class="badge-local">LEAF UNIT</span>
+          </div>
+        </div>
+
+        <div class="card-footer-stats">
+          <div>
+            <span style="color: #888;">SETUP TIME:</span>
+            <div class="stat-val">UNDER 60 SECONDS</div>
+          </div>
+          <div>
+            <span style="color: #888;">INITIAL COST:</span>
+            <div class="stat-val">$0 (FREE FOREVER)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
