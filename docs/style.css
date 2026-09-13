@@ -505,6 +505,44 @@ a {
 .dot-yellow { background: #FFBD2E; }
 .dot-green { background: #27C93F; }
 
+.sidebar-benefit-card {
+  border: 2px solid #282A33;
+  background: #14151A;
+  padding: 16px;
+  margin-bottom: 12px;
+  transition: all var(--transition-fast);
+}
+
+.sidebar-benefit-card:hover {
+  border-color: var(--color-yellow);
+  background: #1A1B22;
+}
+
+.benefit-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.benefit-icon {
+  font-size: 1.2rem;
+}
+
+.benefit-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-white);
+  letter-spacing: -0.02em;
+}
+
+.benefit-desc {
+  font-size: 0.82rem;
+  color: #BBB;
+  line-height: 1.4;
+}
+
 .sidebar-metric-card {
   border: 2px solid #333;
   background: #151518;
@@ -538,6 +576,228 @@ a {
 .metric-desc {
   font-size: 0.8rem;
   color: #AAA;
+}
+
+/* --------------------------------------------------------------------------
+   Solutions Grid (Use-Cases Focus)
+   -------------------------------------------------------------------------- */
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.solution-card {
+  background: var(--color-white);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-brutal);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform var(--transition-bounce), box-shadow var(--transition-bounce);
+}
+
+.solution-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-brutal-lg);
+}
+
+.solution-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border: var(--border-subtle);
+  background: var(--color-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  box-shadow: 3px 3px 0px var(--color-black);
+}
+
+.solution-card h3 {
+  font-size: 1.45rem;
+  margin-bottom: 12px;
+}
+
+.solution-card p {
+  font-size: 0.95rem;
+  color: var(--color-gray-700);
+  margin-bottom: 24px;
+  line-height: 1.55;
+}
+
+.solution-link {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--color-blue);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap var(--transition-fast);
+}
+
+.solution-link:hover {
+  gap: 10px;
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   Comparison Table (Old Way vs OrgSets Way)
+   -------------------------------------------------------------------------- */
+.comparison-table-wrap {
+  background: var(--color-white);
+  border: var(--border-massive);
+  box-shadow: var(--shadow-brutal-lg);
+  overflow-x: auto;
+  margin-top: 32px;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 700px;
+}
+
+.comparison-table th {
+  background: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  padding: 20px 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-right: 2px solid #333;
+}
+
+.comparison-table th.col-highlight {
+  background: var(--color-blue);
+  color: var(--color-white);
+  border-right: none;
+}
+
+.comparison-table td {
+  padding: 20px 24px;
+  border-bottom: 2px solid var(--color-gray-200);
+  border-right: 2px solid var(--color-gray-200);
+  font-size: 0.95rem;
+  vertical-align: top;
+}
+
+.comparison-table tr:hover td {
+  background: var(--color-cream);
+}
+
+.comparison-table td.col-orgsets {
+  background: rgba(0, 68, 255, 0.05);
+  font-weight: 700;
+  color: var(--color-black);
+  border-right: none;
+}
+
+.comparison-feature-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.feature-action-link {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--color-blue);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  transition: gap var(--transition-fast);
+}
+
+.feature-action-link:hover {
+  gap: 10px;
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   High-Converting Call To Action Section
+   -------------------------------------------------------------------------- */
+.conversion-cta-box {
+  background: var(--color-black);
+  color: var(--color-white);
+  border: var(--border-massive);
+  box-shadow: var(--shadow-brutal-lg);
+  padding: 64px 48px;
+  position: relative;
+  overflow: hidden;
+  margin: 80px 0 20px 0;
+}
+
+.conversion-cta-box::after {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  background: var(--color-yellow);
+  pointer-events: none;
+}
+
+.conversion-cta-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.conversion-cta-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--color-white);
+  margin-bottom: 20px;
+}
+
+.conversion-cta-subtitle {
+  font-size: 1.15rem;
+  color: #CCC;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.conversion-cta-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.subtle-brand-credit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: #111;
+  border: 1px solid #333;
+  padding: 16px 24px;
+  margin-bottom: 40px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: #AAA;
+}
+
+.subtle-brand-credit a {
+  color: var(--radtome-orange);
+  text-decoration: underline;
 }
 
 /* --------------------------------------------------------------------------
@@ -1186,6 +1446,9 @@ a {
     grid-template-columns: 1fr;
   }
   .community-grid {
+    grid-template-columns: 1fr;
+  }
+  .conversion-cta-grid {
     grid-template-columns: 1fr;
   }
   .footer-top-row {
