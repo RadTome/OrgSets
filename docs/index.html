@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- ======================================================================
+       EXTREME SEO & DISCOVERABILITY METADATA
+       ====================================================================== -->
+  <title>OrgSets — Hierarchical Multi-Tenant Community & League Management | RadTome</title>
+  <meta name="title" content="OrgSets — Hierarchical Multi-Tenant Community & League Management | RadTome">
+  <meta name="description" content="Official community hub & architectural guide for OrgSets (orgsets.com). Built by RadTome (radtome.com), OrgSets delivers hierarchical multi-tenant infrastructure, Stripe Connect ledger splits, pulse SMS broadcasts, and digital compliance vaults for leagues, scout troops, and distributed networks.">
+  <meta name="keywords" content="OrgSets, orgsets.com, RadTome, radtome.com, hierarchical multi tenant, community management software, league management platform, youth athletics administration, scout troop software, club headquarters, stripe connect ledger auditing, emergency pulse alerts, digital compliance vault, democratic elections software, GraalVM native, Spring Boot 3.5, React 19, software project organization, saas factory, open source issue tracker">
+  <meta name="author" content="RadTome">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://radtome.github.io/OrgSets/">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://radtome.github.io/OrgSets/">
+  <meta property="og:site_name" content="OrgSets Community Hub | RadTome">
+  <meta property="og:title" content="OrgSets — Hierarchical Multi-Tenant Community & League Platform">
+  <meta property="og:description" content="Command your community with infinite parent/child organization trees, automated Stripe ledger splits, and emergency pulse broadcasts. Engineered by RadTome.">
+  <meta property="og:image" content="https://orgsets.com/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://radtome.github.io/OrgSets/">
+  <meta name="twitter:title" content="OrgSets — Hierarchical Multi-Tenant Community & League Platform">
+  <meta name="twitter:description" content="Command your community with infinite parent/child organization trees, automated Stripe ledger splits, and emergency pulse broadcasts. Engineered by RadTome.">
+  <meta name="twitter:image" content="https://orgsets.com/social-preview.png">
+
+  <!-- Favicon and Brand Icons -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000'/%3E%3Crect x='20' y='20' width='30' height='30' fill='%230044FF'/%3E%3Crect x='55' y='20' width='25' height='25' fill='%23FFD600'/%3E%3Cpolygon points='20,60 50,60 35,85' fill='%23FF2222'/%3E%3C/svg%3E">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ======================================================================
+       SCHEMA.ORG COMPREHENSIVE JSON-LD KNOWLEDGE GRAPH
+       ====================================================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://radtome.com/#organization",
+        "name": "RadTome",
+        "url": "https://radtome.com",
+        "logo": "https://radtome.com/src/assets/logo.svg",
+        "description": "Software project organization and SaaS factory building high-utility developer tools, verified browser extensions, and cloud SaaS platforms.",
+        "sameAs": [
+          "https://github.com/RadTome"
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://orgsets.com/#software",
+        "name": "OrgSets",
+        "url": "https://orgsets.com",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All modern browsers (Web, Mobile, Desktop)",
+        "description": "Full-stack multi-tenant platform bridging casual social groups and enterprise software. Scalable hierarchical workspace supporting node/sub-node headquarters, democratic governance elections, compliance vaults, communication pulse alerts, and automated Stripe Connect ledger auditing.",
+        "publisher": {
+          "@id": "https://radtome.com/#organization"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "USD",
+          "category": "Free Tier & Tiered Organization Subscriptions"
+        },
+        "featureList": [
+          "Hierarchical Node Trees (Infinite Parent/Child line of authority)",
+          "Automated Stripe Connect Dues Splits & Ledger Audits",
+          "Pulse Multi-Channel Emergency SMS & Webhook Broadcasts",
+          "Digital Compliance Vault with Hierarchical Document Permissions",
+          "Democratic Secret-Ballot Elections & Certified Quorum",
+          "The Forge: Tenant Brand, Terminology & Custom Role Engine"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://radtome.github.io/OrgSets/#website",
+        "url": "https://radtome.github.io/OrgSets/",
+        "name": "OrgSets Community Hub & Open Issue Tracker",
+        "description": "Public documentation, community issue tracking, and architectural knowledge base for OrgSets by RadTome.",
+        "publisher": {
+          "@id": "https://radtome.com/#organization"
+        },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://radtome.github.io/OrgSets/#breadcrumbs",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "RadTome",
+            "item": "https://radtome.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "OrgSets Platform",
+            "item": "https://orgsets.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Community Hub & Docs",
+            "item": "https://radtome.github.io/OrgSets/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://radtome.github.io/OrgSets/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is OrgSets and how does it differ from traditional community tools?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "OrgSets (https://orgsets.com) is a hierarchical multi-tenant software platform created by RadTome (https://radtome.com). Unlike Discord, Slack, or generic spreadsheets that treat communities as flat rooms, OrgSets models authentic human organizational structure: regional councils, local chapters, and squads with sovereign bylaws, automated revenue splitting via Stripe Connect, and emergency pulse notifications."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who is the parent company behind OrgSets?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "OrgSets is built and maintained by RadTome (https://radtome.com), a software project organization and SaaS factory specializing in GraalVM Native compilation, Spring Boot 3.5, React 19, and cloud developer tools like QuickSnipe, MCP Codex, and PrettyPrint."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the hierarchical ledger split engine work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "OrgSets connects directly with Stripe Connect. When a member pays dues at the local chapter level, custom rules automatically split the revenue (for example, 10% to the National Council, 25% to the Regional District, and 65% retained by the Local Chapter) in a single auditable transaction with zero manual reconciliation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I report bugs or request features for OrgSets?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "This public repository (https://github.com/RadTome/OrgSets) is the official public tracker for bug reports, feature requests, and community discussions. Users can submit issues via GitHub Forms or participate in open discussions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can individual organizations customize their branding and terminology?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Through 'The Forge' engine in OrgSets, every node can override its branding, color palette, custom roles, and domain terminology (e.g. calling sub-units 'Troops', 'Leagues', 'Guilds', or 'Branches')."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- ======================================================================
+       TOP NOTIFICATION TICKER
+       ====================================================================== -->
+  <aside class="top-ticker" aria-label="System Announcement">
+    <div class="ticker-content">
+      <span class="ticker-badge">RADTOME SYS</span>
+      <span>OrgSets Production SaaS is Live at <a href="https://orgsets.com" target="_blank" rel="noopener noreferrer" class="ticker-link">OrgSets.com</a></span>
+      <span style="opacity: 0.5;">//</span>
+      <span>A Product of <a href="https://radtome.com" target="_blank" rel="noopener noreferrer" class="ticker-link">RadTome Software Project Organization</a></span>
+    </div>
+    <div class="mono" style="font-size: 0.75rem;">
+      <span style="color: var(--radtome-cyan);">UTC:</span> <span id="live-clock">--:--:--</span>
+    </div>
+  </aside>
+
+  <!-- ======================================================================
+       STICKY HEADER & NAVIGATION
+       ====================================================================== -->
+  <header class="header-nav" role="banner">
+    <div class="nav-container">
+      <div class="brand-logo-group">
+        <a href="#overview" class="brand-logo-box" title="OrgSets by RadTome">
+          <!-- Bauhaus Inline Geometric SVG -->
+          <svg width="26" height="26" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100" height="100" fill="#000000"/>
+            <path d="M 20 20 L 80 20 L 80 40 L 40 40 L 40 80 L 20 80 Z" fill="#FFFFFF"/>
+            <rect x="50" y="50" width="30" height="30" fill="#0044FF"/>
+            <rect x="30" y="60" width="30" height="10" fill="#FFD600"/>
+            <rect x="60" y="10" width="20" height="20" fill="#FF2222"/>
+          </svg>
+        </a>
+        <div class="brand-title-wrap">
+          <a href="#overview" class="brand-title">ORGSETS</a>
+          <span class="brand-subtitle">BY RADTOME // COMMUNITY HUB</span>
+        </div>
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#radtome">RadTome Lineage</a></li>
+          <li><a href="#features">Capabilities</a></li>
+          <li><a href="#hierarchy-demo">Hierarchy Demo</a></li>
+          <li><a href="#community">Issues &amp; Discussions</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://github.com/RadTome/OrgSets" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" title="View on GitHub">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          ★ GitHub
+        </a>
+        <a href="https://orgsets.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" title="Launch OrgSets.com">
+          LAUNCH ORGSETS.COM ↗
+        </a>
+        <button class="mobile-menu-btn" aria-label="Toggle Navigation" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       MAIN CONTENT CONTAINER
+       ====================================================================== -->
+  <main class="outer-frame" id="overview">
+
+    <!-- HERO SECTION (BAUHAUS SPLIT GRID) -->
+    <section class="hero-box">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-meta">
+            <span class="badge badge-yellow">COMMUNITY HUB &amp; DOCS</span>
+            <span class="badge badge-blue">CANONICAL SAAS: ORGSETS.COM</span>
+            <span class="badge badge-orange">PARENT: RADTOME.COM</span>
+          </div>
+
+          <h1 class="hero-title">
+            COMMAND YOUR <span class="highlight-blue">COMMUNITY.</span>
+          </h1>
+
+          <p class="hero-description">
+            Stop herding cats with flat spreadsheets and scattered group chats. <strong><a href="https://orgsets.com" target="_blank" rel="noopener noreferrer" style="color: var(--color-blue); text-decoration: underline;">OrgSets.com</a></strong> is the hierarchical multi-tenant operating system for leagues, chapters, scout troops, and associations to eliminate administrative debt forever.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="https://orgsets.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              LAUNCH PRODUCTION SAAS ↗
+            </a>
+            <a href="https://github.com/RadTome/OrgSets/issues" target="_blank" rel="noopener noreferrer" class="btn btn-accent">
+              OPEN AN ISSUE / FEATURE ↗
+            </a>
+            <a href="https://github.com/RadTome/OrgSets/discussions" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              JOIN DISCUSSIONS
+            </a>
+          </div>
+
+          <div class="hero-badges-row">
+            <div><strong>Stack:</strong> Java 21 GraalVM Native / Spring Boot 3.5</div>
+            <div><strong>Frontend:</strong> React 19 + Bauhaus System</div>
+            <div><strong>Ledger:</strong> Stripe Connect Real-Time Splits</div>
+            <div><strong>Parent:</strong> <a href="https://radtome.com" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">RadTome</a></div>
+          </div>
+        </div>
+
+        <div class="hero-sidebar">
+          <div>
+            <div class="sidebar-terminal-header">
+              <div class="terminal-dots">
+                <span class="terminal-dot dot-red"></span>
+                <span class="terminal-dot dot-yellow"></span>
+                <span class="terminal-dot dot-green"></span>
+              </div>
+              <span class="mono" style="color: var(--radtome-cyan);">radtome_kernel // telemetry</span>
+            </div>
+
+            <div class="sidebar-metric-card">
+              <div class="metric-label">ARCHITECTURE PROFILE</div>
+              <div class="metric-value">GRAALVM AOT</div>
+              <div class="metric-desc">Spring Boot 3.5 native image with sub-45ms cold boot latency and zero JVM reflection overhead.</div>
+            </div>
+
+            <div class="sidebar-metric-card">
+              <div class="metric-label">ORGANIZATIONAL DEPTH</div>
+              <div class="metric-value">N-TIER TREE</div>
+              <div class="metric-desc">Infinite hierarchical parent/child inheritance with sandboxed role RBAC and automated dues cascades.</div>
+            </div>
+
+            <div class="sidebar-metric-card">
+              <div class="metric-label">DISPATCH &amp; BROADCAST</div>
+              <div class="metric-value">PULSE SMS</div>
+              <div class="metric-desc">Multi-channel priority alerts bypass spam filters for emergency cancellations and urgent notices.</div>
+            </div>
+          </div>
+
+          <div style="border-top: 1px solid #333; padding-top: 16px; margin-top: 24px;">
+            <p style="font-size: 0.8rem; color: #AAA; font-family: var(--font-mono);">
+              "Engineered by RadTome as a flagship SaaS platform to unify community governance, financial auditing, and document compliance."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         RADTOME PARENT COMPANY SHOWCASE
+         ==================================================================== -->
+    <section class="section-wrapper" id="radtome">
+      <div class="radtome-banner">
+        <div class="radtome-scanline"></div>
+        <div class="radtome-grid">
+          <div class="radtome-info">
+            <div class="badge badge-orange" style="margin-bottom: 12px;">PARENT COMPANY LINEAGE</div>
+            <h3>RADTOME // SOFTWARE FACTORY</h3>
+            <p>
+              <strong><a href="https://radtome.com" target="_blank" rel="noopener noreferrer" style="color: var(--radtome-orange); text-decoration: underline;">RadTome</a></strong> is a software project organization and engineering factory building high-utility developer tools, verified browser extensions, and cloud SaaS platforms.
+            </p>
+            <p>
+              OrgSets was engineered by RadTome to solve multi-tier governance challenges for structured non-profits, youth sports leagues, and distributed networks. RadTome provides the battle-tested GraalVM Native runtime, security infrastructure, and design engineering powering OrgSets.
+            </p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <a href="https://radtome.com" target="_blank" rel="noopener noreferrer" class="btn btn-radtome btn-sm">
+                VISIT RADTOME.COM ↗
+              </a>
+              <a href="https://radtome.com/about" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                ABOUT RADTOME
+              </a>
+              <a href="https://github.com/RadTome" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                RADTOME GITHUB
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: #888; margin-bottom: 12px; text-transform: uppercase;">
+              FLAGSHIP SHIPPED SYSTEMS BY RADTOME:
+            </div>
+            <div class="sister-projects-grid">
+              <a href="https://radtome.com" target="_blank" rel="noopener noreferrer" class="sister-project-card">
+                <div class="sister-badge">MV3 EXTENSION</div>
+                <div class="sister-name">QuickSnipe</div>
+                <div class="sister-desc">AI listing studio &amp; competitor sniper for Etsy, Depop, and eBay power sellers.</div>
+              </a>
+
+              <a href="https://mcp-codex.com" target="_blank" rel="noopener noreferrer" class="sister-project-card">
+                <div class="sister-badge">EDGE REGISTRY</div>
+                <div class="sister-name">MCP Codex</div>
+                <div class="sister-desc">Definitive Model Context Protocol directory connecting AI agents to enterprise APIs.</div>
+              </a>
+
+              <a href="https://prettyprint.radtome.com" target="_blank" rel="noopener noreferrer" class="sister-project-card">
+                <div class="sister-badge">LOCAL-FIRST</div>
+                <div class="sister-name">PrettyPrint</div>
+                <div class="sister-desc">Zero-config, zero-telemetry local JSON/XML formatter and syntax highlighter.</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         INTERACTIVE HIERARCHY SIMULATOR
+         ==================================================================== -->
+    <section class="section-wrapper" id="hierarchy-demo">
+      <div class="section-header">
+        <div class="section-pretitle">
+          <span>■</span> LIVE ARCHITECTURE SIMULATOR
+        </div>
+        <h2 class="section-title">HOW HIERARCHICAL NODES WORK</h2>
+        <p class="section-subtitle">
+          Unlike flat chat applications where permissions and payments are unstructured, <a href="https://orgsets.com" target="_blank" rel="noopener noreferrer" style="color: var(--color-blue); text-decoration: underline;">OrgSets</a> constructs an authentic hierarchy. Click any tier below to simulate how governance, ledger splits, and compliance flow seamlessly.
+        </p>
+      </div>
+
+      <div class="simulator-box">
+        <div class="sim-level-tabs" role="tablist">
+          <button class="sim-tab-btn active" data-level="council" role="tab" aria-selected="true">
+            <div class="sim-tab-tag">Tier 1: Apex Governance</div>
+            <div class="sim-tab-title">National Council</div>
+          </button>
+          <button class="sim-tab-btn" data-level="district" role="tab" aria-selected="false">
+            <div class="sim-tab-tag">Tier 2: Regional League</div>
+            <div class="sim-tab-title">Regional District</div>
+          </button>
+          <button class="sim-tab-btn" data-level="chapter" data-type="leaf" role="tab" aria-selected="false">
+            <div class="sim-tab-tag">Tier 3: Operational Unit</div>
+            <div class="sim-tab-title">Local Chapter / Troop</div>
+          </button>
+        </div>
+
+        <div class="sim-viewport">
+          <!-- Visual Tree Diagram -->
+          <div class="sim-tree-col">
+            <div style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; color: var(--color-gray-700);">
+              ORGANIZATION LINEAGE TREE:
+            </div>
+
+            <div class="tree-node-item selected" data-level="council">
+              <div>
+                <strong style="display: block; font-family: var(--font-display);">1. National Apex Council</strong>
+                <p style="font-size: 0.8rem;">Top-level sovereign node (Bylaws, master policy)</p>
+              </div>
+              <span class="badge badge-black">ROOT</span>
+            </div>
+
+            <div style="margin-left: 24px; border-left: 3px dashed var(--color-black); padding-left: 16px; display: flex; flex-direction: column; gap: 12px;">
+              <div class="tree-node-item" data-level="district">
+                <div>
+                  <strong style="display: block; font-family: var(--font-display);">2. Tri-State Regional District</strong>
+                  <p style="font-size: 0.8rem;">Intermediate coordinating node (Regional events)</p>
+                </div>
+                <span class="badge badge-yellow">BRANCH</span>
+              </div>
+
+              <div style="margin-left: 24px; border-left: 3px dashed var(--color-black); padding-left: 16px;">
+                <div class="tree-node-item" data-level="chapter">
+                  <div>
+                    <strong style="display: block; font-family: var(--font-display);">3. Metro Chapter / Local Troop</strong>
+                    <p style="font-size: 0.8rem;">Operational leaf node (Rosters, dues, volunteers)</p>
+                  </div>
+                  <span class="badge badge-blue">LEAF</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Node Inspector Card -->
+          <div class="sim-detail-col">
+            <div>
+              <div class="detail-header">
+                <span class="badge badge-blue" id="sim-level-tag">Tier 1: Root Apex</span>
+                <h3 id="sim-node-name" style="font-size: 1.6rem; margin-top: 8px;">National Governing Council</h3>
+                <span class="mono" id="sim-node-type" style="font-size: 0.75rem; color: var(--color-blue); font-weight: 800;">ROOT_ORGANIZATION</span>
+              </div>
+
+              <div class="detail-specs-grid">
+                <div class="detail-spec-item">
+                  <div class="spec-k">Stripe Dues Split</div>
+                  <div class="spec-v" id="sim-split-ratio">10% National Reserve</div>
+                </div>
+                <div class="detail-spec-item">
+                  <div class="spec-k">Active Members</div>
+                  <div class="spec-v" id="sim-members">12,450 Members</div>
+                </div>
+                <div class="detail-spec-item">
+                  <div class="spec-k">Subordinate Nodes</div>
+                  <div class="spec-v" id="sim-subnodes">14 Districts / 180 Chapters</div>
+                </div>
+                <div class="detail-spec-item">
+                  <div class="spec-k">Locked Roles</div>
+                  <div class="spec-v" id="sim-roles" style="font-size: 0.85rem;">PRESIDENT, TREASURER</div>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 16px;">
+                <div class="spec-k">Digital Compliance Vault Scope:</div>
+                <p id="sim-vault" style="font-size: 0.85rem; color: var(--color-black); font-weight: 600;">Apex Vault (Constitution, Master Bylaws, Global Insurance Policy)</p>
+              </div>
+
+              <div style="margin-bottom: 16px;">
+                <div class="spec-k">Pulse Alert Broadcast Authority:</div>
+                <p id="sim-pulse" style="font-size: 0.85rem; color: var(--color-black); font-weight: 600;">Global SMS Blast &amp; Emergency Broadcast across all subordinate nodes</p>
+              </div>
+            </div>
+
+            <div style="background: var(--color-cream); border: 1px solid var(--color-gray-300); padding: 12px; margin-top: 16px;">
+              <p id="sim-quote" style="font-style: italic; font-size: 0.85rem; color: var(--color-gray-700);">
+                "Central leadership maintains sovereign compliance and ledger auditing without bottlenecking local chapter independence."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CORE CAPABILITIES MATRIX
+         ==================================================================== -->
+    <section class="section-wrapper" id="features">
+      <div class="section-header">
+        <div class="section-pretitle">
+          <span>■</span> FULL FEATURE MATRIX
+        </div>
+        <h2 class="section-title">ENGINEERED FOR REAL LEADERSHIP</h2>
+        <p class="section-subtitle">
+          Everything you need to run high-stakes organizations. From audited financial ledgers to emergency pulse networks, explore the modular power of <a href="https://orgsets.com" target="_blank" rel="noopener noreferrer" style="color: var(--color-blue); text-decoration: underline;">OrgSets.com</a>.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1: Automated Ledgers -->
+        <article class="feature-card">
+          <div>
+            <div class="feature-card-header">
+              <div class="feature-icon-box icon-blue">💳</div>
+              <span class="badge badge-black">FINANCIAL</span>
+            </div>
+            <h3>Automated Split Ledgers</h3>
+            <p>
+              Direct Stripe Connect integration. When members pay dues, tournament registrations, or camp fees, revenue is split automatically across parent councils, leagues, and chapters in real time. Zero manual reconciliation.
+            </p>
+          </div>
+          <div class="feature-tags">
+            <span class="feature-tag">#StripeConnect</span>
+            <span class="feature-tag">#AutomatedSplits</span>
+            <span class="feature-tag">#RealTimeAudit</span>
+          </div>
+        </article>
+
+        <!-- Feature 2: Pulse Alert Engine -->
+        <article class="feature-card">
+          <div>
+            <div class="feature-card-header">
+              <div class="feature-icon-box icon-yellow">⚡</div>
+              <span class="badge badge-yellow">BROADCAST</span>
+            </div>
+            <h3>Pulse Emergency Network</h3>
+            <p>
+              When a thunderstorm cancels practice or a schedule changes, social media algorithms fail you. Pulse broadcasts urgent updates instantly via direct SMS gateways and high-priority push notifications.
+            </p>
+          </div>
+          <div class="feature-tags">
+            <span class="feature-tag">#SMSAlerts</span>
+            <span class="feature-tag">#EmergencyDispatch</span>
+            <span class="feature-tag">#DirectDelivery</span>
+          </div>
+        </article>
+
+        <!-- Feature 3: Digital Vault -->
+        <article class="feature-card">
+          <div>
+            <div class="feature-card-header">
+              <div class="feature-icon-box icon-red">🔒</div>
+              <span class="badge badge-red">COMPLIANCE</span>
+            </div>
+            <h3>Digital Compliance Vault</h3>
+            <p>
+              Store legal bylaws, liability waivers, medical release forms, and background checks with strict role permissions. Master council documents flow down securely without exposing private local files.
+            </p>
+          </div>
+          <div class="feature-tags">
+            <span class="feature-tag">#EncryptedStorage</span>
+            <span class="feature-tag">#Bylaws</span>
+            <span class="feature-tag">#YouthWaivers</span>
+          </div>
+        </article>
+
+        <!-- Feature 4: Democratic Governance -->
+        <article class="feature-card">
+          <div>
+            <div class="feature-card-header">
+              <div class="feature-icon-box icon-black">🗳️</div>
+              <span class="badge badge-black">DEMOCRACY</span>
+            </div>
+            <h3>Elections &amp; Certified Voting</h3>
+            <p>
+              Run officer elections, amendment referendums, and budget approvals with cryptographic integrity. Certified secret ballots, quorum enforcement, and auditable tally reports give members confidence.
+            </p>
+          </div>
+          <div class="feature-tags">
+            <span class="feature-tag">#SecretBallot</span>
+            <span class="feature-tag">#QuorumControl</span>
+            <span class="feature-tag">#Elections</span>
+          </div>
+        </article>
+
+        <!-- Feature 5: The Forge -->
+        <article class="feature-card">
+          <div>
+            <div class="feature-card-header">
+              <div class="feature-icon-box icon-blue">🎨</div>
+              <span class="badge badge-blue">TENANT ENGINE</span>
+            </div>
+            <h3>The Forge Customization</h3>
+            <p>
+              No cookie-cutter labels. If your organization calls leaders "Scoutmasters", "Commodores", or "Chairs", configure custom terminology and bespoke role permissions in seconds with per-tenant branding.
+            </p>
+          </div>
+          <div class="feature-tags">
+            <span class="feature-tag">#TerminologyOverride</span>
+            <span class="feature-tag">#CustomRBAC</span>
+            <span class="feature-tag">#WhiteLabel</span>
+          </div>
+        </article>
+
+        <!-- Feature 6: Joint Calendars & Facilities -->
+        <article class="feature-card">
+          <div>
+            <div class="feature-card-header">
+              <div class="feature-icon-box icon-yellow">📅</div>
+              <span class="badge badge-yellow">OPERATIONS</span>
+            </div>
+            <h3>Joint Calendars &amp; Booking</h3>
+            <p>
+              Coordinate inter-chapter games, regional rallies, and joint meetings. Book shared diamonds, pitches, and meeting halls with automated conflict detection across all subordinate chapters.
+            </p>
+          </div>
+          <div class="feature-tags">
+            <span class="feature-tag">#CrossNodeEvents</span>
+            <span class="feature-tag">#FacilityBooking</span>
+            <span class="feature-tag">#RSVP</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         COMMUNITY HUB & ISSUES / DISCUSSIONS ACTION CENTER
+         ==================================================================== -->
+    <section class="section-wrapper" id="community">
+      <div class="community-box">
+        <div class="community-grid">
+          <div class="community-content">
+            <div class="badge badge-black" style="margin-bottom: 12px;">OPEN COMMUNITY PLATFORM</div>
+            <h2>JOIN THE ORGSETS COMMUNITY</h2>
+            <p>
+              This public repository (<a href="https://github.com/RadTome/OrgSets" target="_blank" rel="noopener noreferrer" style="font-weight: 800; text-decoration: underline;">RadTome/OrgSets</a>) is the central gathering place for community administrators, club leaders, scoutmasters, and developers. Report glitches, propose architectural enhancements, and discuss leadership best practices.
+            </p>
+
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+              <a href="https://github.com/RadTome/OrgSets/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                🐛 REPORT A BUG
+              </a>
+              <a href="https://github.com/RadTome/OrgSets/issues/new?template=feature_request.yml" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                💡 PROPOSE A FEATURE
+              </a>
+              <a href="https://github.com/RadTome/OrgSets/discussions" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                💬 OPEN DISCUSSIONS
+              </a>
+            </div>
+          </div>
+
+          <div class="action-cards-grid">
+            <a href="https://github.com/RadTome/OrgSets/issues" target="_blank" rel="noopener noreferrer" class="action-card">
+              <div>
+                <span class="badge badge-yellow" style="margin-bottom: 8px;">TRACKER</span>
+                <h4>Issue Tracker</h4>
+                <p>Browse active bug reports, verified regressions, and roadmap deliverables.</p>
+              </div>
+              <span class="mono" style="font-size: 0.75rem; font-weight: 800; margin-top: 12px;">VIEW ISSUES →</span>
+            </a>
+
+            <a href="https://github.com/RadTome/OrgSets/discussions" target="_blank" rel="noopener noreferrer" class="action-card">
+              <div>
+                <span class="badge badge-blue" style="margin-bottom: 8px;">FORUM</span>
+                <h4>Discussions</h4>
+                <p>Chat with other administrators, share chapter bylaws, and seek implementation advice.</p>
+              </div>
+              <span class="mono" style="font-size: 0.75rem; font-weight: 800; margin-top: 12px;">JOIN FORUM →</span>
+            </a>
+
+            <a href="https://orgsets.com" target="_blank" rel="noopener noreferrer" class="action-card">
+              <div>
+                <span class="badge badge-red" style="margin-bottom: 8px;">LIVE APP</span>
+                <h4>OrgSets Production</h4>
+                <p>Register your organization, launch your node tree, and invite members.</p>
+              </div>
+              <span class="mono" style="font-size: 0.75rem; font-weight: 800; margin-top: 12px;">ORGSETS.COM →</span>
+            </a>
+
+            <a href="https://radtome.com" target="_blank" rel="noopener noreferrer" class="action-card">
+              <div>
+                <span class="badge badge-orange" style="margin-bottom: 8px;">PARENT ORG</span>
+                <h4>RadTome Factory</h4>
+                <p>Discover RadTome's engineering philosophy, developer tools, and cloud platforms.</p>
+              </div>
+              <span class="mono" style="font-size: 0.75rem; font-weight: 800; margin-top: 12px;">RADTOME.COM →</span>
+            </a>
+          </div>
+        </div>
+
+        <div style="margin-top: 40px; padding-top: 24px; border-top: 2px dashed var(--color-black); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+          <div class="mono" style="font-size: 0.85rem; font-weight: 700;">
+            <span>CLONE REPO:</span>
+            <code style="background: var(--color-white); border: 1px solid #000; padding: 4px 8px; margin-left: 8px;">git clone https://github.com/RadTome/OrgSets.git</code>
+          </div>
+          <button class="btn btn-sm btn-outline" data-copy-target="git clone https://github.com/RadTome/OrgSets.git">
+            📋 COPY COMMAND
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         FREQUENTLY ASKED QUESTIONS (SCHEMA OPTIMIZED)
+         ==================================================================== -->
+    <section class="section-wrapper" id="faq">
+      <div class="section-header">
+        <div class="section-pretitle">
+          <span>■</span> KNOWLEDGE BASE
+        </div>
+        <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+        <p class="section-subtitle">
+          Key questions regarding OrgSets multi-tenant capabilities, financial ledgers, and community collaboration.
+        </p>
+      </div>
+
+      <div class="faq-grid">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item active">
+          <button class="faq-question" aria-expanded="true">
+            <span>What is OrgSets and who is it built for?</span>
+            <div class="faq-indicator">−</div>
+          </button>
+          <div class="faq-answer">
+            <p>
+              <strong><a href="https://orgsets.com" target="_blank" rel="noopener noreferrer" style="color: var(--color-blue); text-decoration: underline;">OrgSets</a></strong> is an all-in-one hierarchical multi-tenant platform created by <strong><a href="https://radtome.com" target="_blank" rel="noopener noreferrer" style="color: var(--radtome-orange); text-decoration: underline;">RadTome</a></strong>. It is built specifically for communities with real structural depth: youth athletic leagues, scout councils, fraternal organizations, alumni associations, and professional networks who need structured authority, automated financial splitting, and emergency broadcast dispatch.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What is RadTome and how does it relate to OrgSets?</span>
+            <div class="faq-indicator">+</div>
+          </button>
+          <div class="faq-answer">
+            <p>
+              <strong><a href="https://radtome.com" target="_blank" rel="noopener noreferrer" style="color: var(--radtome-orange); text-decoration: underline;">RadTome</a></strong> is the parent software project organization and engineering factory behind OrgSets. RadTome develops high-utility developer platforms, Chrome Web Store extensions like QuickSnipe, edge registries like MCP Codex, and local-first utilities like PrettyPrint. RadTome engineers OrgSets with high-performance Java 21 GraalVM Native compilation and modern React 19 architecture.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How does the automated Stripe Connect ledger split work?</span>
+            <div class="faq-indicator">+</div>
+          </button>
+          <div class="faq-answer">
+            <p>
+              OrgSets integrates with Stripe Connect Custom and Express accounts. When a member pays registration fees or annual dues at a local chapter level, OrgSets automatically calculates percentage-based allocations up the parent tree. In a single transaction, the National Council receives its levy, the Regional League takes its tournament cut, and the Local Chapter retains the remainder—complete with an immutable audit trail.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How do I report bugs or suggest new features?</span>
+            <div class="faq-indicator">+</div>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Use this public repository! Head to <a href="https://github.com/RadTome/OrgSets/issues" target="_blank" rel="noopener noreferrer" style="color: var(--color-blue); text-decoration: underline;">GitHub Issues</a> to file bug reports using our structured form or submit a feature request. For open architectural discussions, tips, and workflow inquiries, participate in <a href="https://github.com/RadTome/OrgSets/discussions" target="_blank" rel="noopener noreferrer" style="color: var(--color-blue); text-decoration: underline;">GitHub Discussions</a>.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can our organization white-label or change terminology?</span>
+            <div class="faq-indicator">+</div>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes. Through "The Forge", administrators can customize their organization's color palette, logo, and domain terminology. If your hierarchy uses "Troops", "Districts", "Guilds", or "Lodges" instead of generic words, OrgSets reflects your exact cultural vocabulary across all menus and member dashboards.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       BRUTALIST FOOTER WITH COMPLETE CROSS-LINKS
+       ====================================================================== -->
+  <footer class="footer-main" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-top-row">
+        <!-- Col 1: Brand & Parent Bio -->
+        <div class="footer-col">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+            <div class="brand-logo-box" style="width: 36px; height: 36px;">
+              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100" height="100" fill="#000000"/>
+                <path d="M 20 20 L 80 20 L 80 40 L 40 40 L 40 80 L 20 80 Z" fill="#FFFFFF"/>
+                <rect x="50" y="50" width="30" height="30" fill="#0044FF"/>
+                <rect x="30" y="60" width="30" height="10" fill="#FFD600"/>
+              </svg>
+            </div>
+            <strong style="font-family: var(--font-display); font-size: 1.4rem; color: var(--color-white);">ORGSETS</strong>
+          </div>
+          <p style="font-size: 0.9rem; color: #AAA; line-height: 1.6; margin-bottom: 16px;">
+            The all-in-one hierarchical multi-tenant operating system eliminating administrative debt for leagues, chapters, and networks worldwide.
+          </p>
+          <p style="font-size: 0.85rem; color: #888; font-family: var(--font-mono);">
+            Designed, hosted, and maintained by <strong><a href="https://radtome.com" target="_blank" rel="noopener noreferrer" style="color: var(--radtome-orange); text-decoration: underline;">RadTome</a></strong> Software Project Organization.
+          </p>
+        </div>
+
+        <!-- Col 2: Platform Links -->
+        <div class="footer-col">
+          <h4>ORGSETS PLATFORM</h4>
+          <ul>
+            <li><a href="https://orgsets.com" target="_blank" rel="noopener noreferrer">Production SaaS ↗</a></li>
+            <li><a href="https://orgsets.com" target="_blank" rel="noopener noreferrer">Pricing &amp; Tiers ↗</a></li>
+            <li><a href="https://orgsets.com" target="_blank" rel="noopener noreferrer">Feature Matrix ↗</a></li>
+            <li><a href="https://orgsets.com" target="_blank" rel="noopener noreferrer">Ledger Split Engine ↗</a></li>
+            <li><a href="https://orgsets.com" target="_blank" rel="noopener noreferrer">Digital Vault ↗</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: RadTome Ecosystem -->
+        <div class="footer-col">
+          <h4>RADTOME FACTORY</h4>
+          <ul>
+            <li><a href="https://radtome.com" target="_blank" rel="noopener noreferrer">RadTome.com ↗</a></li>
+            <li><a href="https://radtome.com/about" target="_blank" rel="noopener noreferrer">About RadTome ↗</a></li>
+            <li><a href="https://radtome.com/articles" target="_blank" rel="noopener noreferrer">Articles &amp; Codex ↗</a></li>
+            <li><a href="https://mcp-codex.com" target="_blank" rel="noopener noreferrer">MCP Codex ↗</a></li>
+            <li><a href="https://prettyprint.radtome.com" target="_blank" rel="noopener noreferrer">PrettyPrint ↗</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Community & GitHub -->
+        <div class="footer-col">
+          <h4>COMMUNITY HUB</h4>
+          <ul>
+            <li><a href="https://github.com/RadTome/OrgSets" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a></li>
+            <li><a href="https://github.com/RadTome/OrgSets/issues" target="_blank" rel="noopener noreferrer">Bug Tracker ↗</a></li>
+            <li><a href="https://github.com/RadTome/OrgSets/issues/new?template=feature_request.yml" target="_blank" rel="noopener noreferrer">Feature Proposals ↗</a></li>
+            <li><a href="https://github.com/RadTome/OrgSets/discussions" target="_blank" rel="noopener noreferrer">GitHub Discussions ↗</a></li>
+            <li><a href="https://radtome.github.io/OrgSets/sitemap.xml" target="_blank" rel="noopener noreferrer">XML Sitemap ↗</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          <span>© 2026 <strong>RADTOME</strong> (radtome.com). Open Community Spec. All rights reserved.</span>
+        </div>
+        <div class="footer-legal-links">
+          <a href="https://github.com/RadTome/OrgSets/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" style="color: #AAA;">MIT License</a>
+          <a href="https://github.com/RadTome/OrgSets/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" style="color: #AAA;">Security</a>
+          <a href="https://github.com/RadTome/OrgSets/blob/main/CODE_OF_CONDUCT.md" target="_blank" rel="noopener noreferrer" style="color: #AAA;">Code of Conduct</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>

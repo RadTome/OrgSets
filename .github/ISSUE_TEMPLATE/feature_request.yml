@@ -1,0 +1,55 @@
+name: "💡 Feature Request"
+description: "Suggest an idea or improvement for the OrgSets multi-tenant platform"
+title: "[FEATURE]: "
+labels: ["enhancement", "discussion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea to make community administration faster, safer, or more automated? Share it with the [OrgSets](https://orgsets.com) and [RadTome](https://radtome.com) teams!
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: Is your feature request related to a problem? What administrative barrier are you experiencing?
+      placeholder: "Our youth sports league struggles to coordinate waivers across 12 distinct regional teams without central visibility..."
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed Solution / Desired Feature
+      description: Describe what you want to happen and how administrators or members would use it.
+      placeholder: "A bulk waiver verification view in the Digital Vault allowing parent council officers to sign off on child node compliance..."
+    validations:
+      required: true
+  - type: dropdown
+    id: target_module
+    attributes:
+      label: Target Module
+      options:
+        - "Hierarchical Nodes & Multi-Tenant Management"
+        - "Ledger, Stripe Splits & Automated Payouts"
+        - "Pulse Broadcast & Emergency Communication"
+        - "Digital Vault & Legal Document Compliance"
+        - "Cross-Node Calendars & Booking Engine"
+        - "Democratic Governance & Balloting"
+        - "The Forge (Branding, White-Labeling & Themes)"
+        - "Mobile Experience & Notifications"
+        - "Developer API & Webhooks"
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Any alternative solutions or workarounds you've explored.
+    validations:
+      required: false
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context & Mockups
+      description: Add any screenshots, flowcharts, or background details.
+    validations:
+      required: false

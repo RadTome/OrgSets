@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: OrgSets Platform Live App
+    url: https://orgsets.com
+    about: Access your organization headquarters, node settings, and dashboards.
+  - name: RadTome Software Project Organization
+    url: https://radtome.com
+    about: Learn about our parent engineering factory, developer tools, and architecture.
+  - name: GitHub Discussions (Community Forum)
+    url: https://github.com/RadTome/OrgSets/discussions
+    about: Ask questions, share feedback, and discuss ideas with fellow community leaders.
+  - name: Security Vulnerability Reporting
+    url: https://github.com/RadTome/OrgSets/security/policy
+    about: Report potential security vulnerabilities responsibly to our security team.

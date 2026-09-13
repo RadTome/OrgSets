@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Canonical Sitemap for OrgSets Community & Documentation Hub
+Sitemap: https://radtome.github.io/OrgSets/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 0

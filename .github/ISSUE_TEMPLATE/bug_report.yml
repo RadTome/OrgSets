@@ -1,0 +1,69 @@
+name: "🐛 Bug Report"
+description: "Report a bug or unexpected behavior in the OrgSets web application or API"
+title: "[BUG]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting an issue with [OrgSets](https://orgsets.com)! Please fill out the fields below so we can diagnose and resolve the problem quickly.
+  - type: dropdown
+    id: module
+    attributes:
+      label: Affected Module / Domain
+      description: Which area of OrgSets is experiencing the issue?
+      options:
+        - "Hierarchical Nodes & Tree Lineage"
+        - "Ledger, Dues & Stripe Connect Splits"
+        - "Pulse Broadcast & Emergency SMS"
+        - "Digital Vault & File Compliance"
+        - "Calendar & Joint Node Events"
+        - "Democratic Elections & Quorum Voting"
+        - "Role Definitions & Dynamic RBAC"
+        - "The Forge (Branding & Terminology Overrides)"
+        - "Authentication & Clerk JWT Sync"
+        - "Other / UI Glitch"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem Description
+      description: A clear, concise description of what the bug is.
+      placeholder: "When attempting to allocate dues split to a child node, the transaction fails with..."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction_steps
+    attributes:
+      label: Steps to Reproduce
+      description: Step-by-step instructions to reproduce the issue.
+      placeholder: |
+        1. Navigate to 'Ledger' tab on Council level.
+        2. Click on 'Configure Split Rule'.
+        3. Enter 15% override for sub-chapter.
+        4. Observe error message in console.
+    validations:
+      required: true
+  - type: textarea
+    id: expected_vs_actual
+    attributes:
+      label: Expected vs Actual Behavior
+      description: What did you expect to happen versus what actually happened?
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment Details
+      description: Browser, Operating System, Device (e.g., Chrome 128 on macOS, Safari on iOS 18).
+      placeholder: "Chrome 128 / Windows 11"
+    validations:
+      required: false
+  - type: textarea
+    id: screenshots_logs
+    attributes:
+      label: Screenshots or Console Logs
+      description: Paste relevant error messages, network payloads, or screenshots.
+    validations:
+      required: false
