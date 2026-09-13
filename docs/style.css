@@ -349,6 +349,32 @@ a {
   box-shadow: 9px 9px 0px var(--color-black);
 }
 
+.btn-cta-primary {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  box-shadow: 5px 5px 0px var(--color-yellow);
+}
+
+.btn-cta-primary:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0px var(--color-yellow);
+}
+
+.btn-cta-white {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  box-shadow: 5px 5px 0px var(--color-yellow);
+}
+
+.btn-cta-white:hover {
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0px var(--color-white);
+}
+
 .btn-sm {
   height: 38px;
   padding: 0 14px;
