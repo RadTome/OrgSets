@@ -209,17 +209,22 @@ a {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 8px;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 6px 12px;
+  padding: 6px 10px;
   border: 2px solid transparent;
+  white-space: nowrap;
+  display: inline-block;
+  line-height: 1.2;
   transition: all var(--transition-fast);
 }
 
@@ -229,10 +234,33 @@ a {
   box-shadow: 3px 3px 0px var(--color-black);
 }
 
+.nav-links a.nav-radtome-link {
+  color: var(--radtome-orange);
+}
+
+.nav-links a.nav-radtome-link:hover {
+  background-color: var(--radtome-orange);
+  color: var(--color-white);
+  box-shadow: 3px 3px 0px var(--color-black);
+}
+
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.btn-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-github svg {
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .mobile-menu-btn {
@@ -322,10 +350,17 @@ a {
 }
 
 .btn-sm {
-  padding: 8px 16px;
-  font-size: 0.8rem;
+  height: 38px;
+  padding: 0 14px;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
   border: var(--border-subtle);
   box-shadow: var(--shadow-brutal-sm);
+  vertical-align: middle;
 }
 
 .badge {
@@ -545,91 +580,170 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   RadTome Lineage Panel (Parent Company Showcase)
+   Organizational Reach Ribbon
    -------------------------------------------------------------------------- */
-.radtome-banner {
-  background: var(--radtome-dark);
-  color: var(--color-white);
+.org-category-ribbon {
+  background: var(--color-black);
   border: var(--border-thick);
-  box-shadow: var(--shadow-radtome);
-  padding: 48px;
-  position: relative;
-  overflow: hidden;
+  box-shadow: var(--shadow-brutal);
+  padding: 16px 24px;
+  margin: 36px 0 48px 0;
 }
 
-.radtome-scanline {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: rgba(255, 95, 31, 0.4);
-  animation: scanline 4s linear infinite;
-  pointer-events: none;
-}
-
-@keyframes scanline {
-  0% { top: 0; }
-  100% { top: 100%; }
-}
-
-.radtome-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+.ribbon-container {
+  display: flex;
   align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
 }
 
-.radtome-info h3 {
-  font-size: 2.2rem;
+.ribbon-label {
+  background: var(--color-yellow);
+  color: var(--color-black);
+  padding: 3px 8px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.ribbon-items {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ribbon-item {
   color: var(--color-white);
-  margin-bottom: 12px;
+  white-space: nowrap;
 }
 
-.radtome-info p {
-  color: #BBB;
+.ribbon-sep {
+  color: var(--color-yellow);
+  font-weight: 900;
+}
+
+/* --------------------------------------------------------------------------
+   Footer RadTome Parent Company Showcase Panel
+   -------------------------------------------------------------------------- */
+.footer-radtome-banner {
+  background: #111216;
+  border: 2px solid #2B2D35;
+  box-shadow: 6px 6px 0px #000;
+  padding: 32px;
+  margin-bottom: 56px;
+  position: relative;
+  transition: border-color var(--transition-fast);
+}
+
+.footer-radtome-banner:hover {
+  border-color: var(--radtome-orange);
+}
+
+.footer-radtome-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-bottom: 1px solid #282A33;
+  padding-bottom: 16px;
   margin-bottom: 24px;
 }
 
-.sister-projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+.footer-radtome-badges {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-.sister-project-card {
-  border: 1px solid #333;
-  background: rgba(255, 255, 255, 0.03);
-  padding: 16px;
+.footer-radtome-body {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.footer-radtome-bio p {
+  color: #CCC;
+}
+
+.footer-radtome-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.footer-radtome-links a {
+  color: var(--radtome-orange);
+  transition: color var(--transition-fast);
+}
+
+.footer-radtome-links a:hover {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+.footer-radtome-tools .tools-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #888;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.footer-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.footer-tool-card {
+  border: 1px solid #282A33;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
   transition: all var(--transition-fast);
 }
 
-.sister-project-card:hover {
+.footer-tool-card:hover {
   border-color: var(--radtome-orange);
-  background: rgba(255, 95, 31, 0.1);
+  background: rgba(255, 95, 31, 0.08);
   transform: translateY(-2px);
 }
 
-.sister-name {
+.tool-badge {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--radtome-cyan);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.tool-name {
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 800;
   color: var(--color-white);
+  margin-bottom: 2px;
 }
 
-.sister-badge {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  color: var(--radtome-cyan);
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-
-.sister-desc {
-  font-size: 0.75rem;
+.tool-desc {
+  font-size: 0.7rem;
   color: #888;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 /* --------------------------------------------------------------------------
