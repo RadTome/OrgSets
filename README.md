@@ -1,11 +1,28 @@
-# OrgSets Community Hub & Open Issue Tracker
+<p align="center">
+  <a href="https://orgsets.com" target="_blank" rel="noopener noreferrer">
+    <img src="./orgsets-avatar.png" width="100" height="100" alt="OrgSets Bauhaus Logo" />
+  </a>
+</p>
+
+<h1 align="center">OrgSets</h1>
+
+<p align="center">
+  <strong>The All-In-One Hierarchical Operating System for Leagues, Troops &amp; Chapters</strong><br>
+  <a href="https://orgsets.com/plans">Start Free Forever</a> • 
+  <a href="https://radtome.github.io/OrgSets/">Interactive Showcase</a> • 
+  <a href="https://github.com/RadTome/OrgSets/discussions">Discussions</a> • 
+  <a href="https://github.com/RadTome/OrgSets/issues">Issue Tracker</a>
+</p>
+
+<div align="center">
 
 [![OrgSets Platform](https://img.shields.io/badge/OrgSets.com-Production_SaaS-0044FF?style=for-the-badge&logo=globe)](https://orgsets.com)
-[![RadTome Organization](https://img.shields.io/badge/RadTome-Software_Factory-FF5F1F?style=for-the-badge&logo=github)](https://radtome.com)
 [![GitHub Pages](https://img.shields.io/badge/Docs-GitHub_Pages-FFD600?style=for-the-badge&logo=githubpages&labelColor=000000&color=FFD600)](https://radtome.github.io/OrgSets/)
 [![Discussions](https://img.shields.io/badge/Community-Discussions-green?style=for-the-badge&logo=github)](https://github.com/RadTome/OrgSets/discussions)
 [![Issues](https://img.shields.io/badge/Tracker-Public_Issues-red?style=for-the-badge&logo=github)](https://github.com/RadTome/OrgSets/issues)
 [![License: MIT](https://img.shields.io/badge/License-MIT-black?style=for-the-badge)](./LICENSE)
+
+</div>
 
 Welcome to the public community hub, feedback forum, and issue tracker for **[OrgSets](https://orgsets.com)** — the all-in-one hierarchical multi-tenant platform built for leagues, chapters, associations, and networks.
 
